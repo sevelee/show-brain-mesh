@@ -87,6 +87,8 @@
     <Compile Include="Assets\Scripts\Sender.cs" />
     <Compile Include="Assets\Scripts\SenderMaker.cs" />
     <Compile Include="Assets\Scripts\TestSender.cs" />
+    <Compile Include="Assets\Scripts\pSender.cs" />
+    <Compile Include="Assets\Scripts\pSenderMaker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\3x3.txt" />

@@ -10,7 +10,7 @@ public class SenderMaker : MonoBehaviour {
     #endregion
 
     #region private variables
-
+    
     #endregion
 
     private void Awake()

@@ -7,7 +7,7 @@ public class Axon {
     Cell cell_a;
     Cell cell_b;
 
-    public SenderMaker senderMaker;
+    public pSenderMaker senderMaker;
 
     #region setting parameters
 
@@ -41,7 +41,7 @@ public class Axon {
 
     // Use this for initialization
     void Start () {
-        senderMaker = new SenderMaker();
+        senderMaker = new pSenderMaker();
 	}
 	
 	// Update is called once per frame
@@ -55,7 +55,6 @@ public class Axon {
     /// <param name="fromCell"> the Cell which send the signal</param>
     internal int sendSignal(Cell fromCell)
     {
-        if (senderMaker == null) senderMaker = new SenderMaker();
         if (fromCell == cell_a)
         {
             //cell_b.getSignal = true;

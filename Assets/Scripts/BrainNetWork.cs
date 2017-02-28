@@ -42,7 +42,7 @@ public class BrainNetWork : MonoBehaviour {
     public bool showCell = true;
 
     public GameObject senderMakerGO;
-    SenderMaker senderMaker;
+    pSenderMaker senderMaker;
     #endregion
 
     #region debug
@@ -73,7 +73,7 @@ public class BrainNetWork : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        senderMaker = senderMakerGO.GetComponent<SenderMaker>();
+        senderMaker = senderMakerGO.GetComponent<pSenderMaker>();
         loadVertexData();
         InitCells();
         InitAxons();

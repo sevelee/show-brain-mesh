@@ -38,6 +38,8 @@ namespace seve.QuadParticle
         #region Private Variables
 
         ParticleProperty[] pProper;
+
+        Vector3 disapperPos = new Vector3(10000000, 10000000, 10000000);
         #endregion
 
         /// <summary>
@@ -57,7 +59,7 @@ namespace seve.QuadParticle
 
         public void setFree(int pid)
         {
-            pProper[pid].position = new Vector3(10000000, 10000000, 10000000);
+            pProper[pid].position = disapperPos;
             pProper[pid].active = false;
             ParticlePropertyBuffer.SetData(pProper);
         }
@@ -66,7 +68,11 @@ namespace seve.QuadParticle
         {
             if (pid < 0 || pid >= ParticleAmount) return;
             pProper[pid].position = pos;
-            ParticlePropertyBuffer.SetData(pProper);
+        }
+
+        public void disappear(int pid)
+        {
+            pProper[pid].position = disapperPos;
         }
 
         // Use this for initialization
@@ -119,7 +125,7 @@ namespace seve.QuadParticle
             for (int i = 0; i < ParticleAmount; ++i)
             {
                 pProper[i].active = false;
-                pProper[i].position = new Vector3(10000000, 10000000, 10000000);
+                pProper[i].position = disapperPos;
             }
             ParticlePropertyBuffer.SetData(pProper);
         }
@@ -152,6 +158,7 @@ namespace seve.QuadParticle
         void updateAndDraw()
         {
             Vector3 pos = gameObject.transform.position;
+            ParticlePropertyBuffer.SetData(pProper);
             ParticleMaterial.SetVector("_Transform", pos);
             ParticleMaterial.SetBuffer("_VertexBuffer", VertexBuffer);
             ParticleMaterial.SetBuffer("_UVBuffer", UVBuffer);
